@@ -1,16 +1,24 @@
-<p align="center">
-  <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a>
-</p>
-
 <div align="center">
 
-# SITKit
+<p>
+  <a href="https://www.symtrustai.com/"><img src="assets/branding/symtrust-logo.png" alt="SymTrust" height="82"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.sjtu.edu.cn/"><img src="assets/branding/sjtu-logo.png" alt="Shanghai Jiao Tong University" height="82"></a>
+</p>
 
-**Surrogate Interaction Theory Toolkit**
+<h1>SITKit</h1>
 
-Generate model interaction reports from a local language model and a JSON dataset.
+<p><strong>Surrogate Interaction Theory Toolkit</strong></p>
+
+<p>Generate model interaction reports from a local language model and a JSON dataset.</p>
+
+<p><code>v0.1.0</code> · <code>Python 3.11</code> · <code>Linux x86_64</code></p>
+
+<p><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
 </div>
+
+---
 
 ## Before you start
 
