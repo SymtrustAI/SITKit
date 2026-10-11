@@ -208,7 +208,7 @@ runs/economics/economics-0001/report/target_model/
 - `inference.txt`：模型输入、输出和解释目标
 - `salient_interaction.csv`：显著交互及其强度
 - `signed_strength_by_order.png`：不同阶数的正负交互分布
-- `and_or_tree.png`：AND/OR 交互结构图
+- `and_or_tree.png`：展示全部显著 AND/OR 交互，超过 20 个时显示绝对强度最高的 20 个
 
 整个数据集的平均交互分布位于：
 

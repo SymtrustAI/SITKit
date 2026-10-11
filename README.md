@@ -211,7 +211,7 @@ Start with:
 - `inference.txt`: model input, output, and explanation target
 - `salient_interaction.csv`: salient interactions and their strengths
 - `signed_strength_by_order.png`: positive and negative strength by interaction order
-- `and_or_tree.png`: the AND/OR interaction structure
+- `and_or_tree.png`: all salient AND/OR interactions, capped at the 20 strongest
 
 The dataset-level average interaction distribution is written to:
 
