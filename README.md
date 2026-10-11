@@ -49,6 +49,7 @@ You should see:
 README.md
 README.zh-CN.md
 examples/
+requirements.txt
 sitkit-0.1.0-cp311-cp311-linux_x86_64.whl
 ```
 
@@ -56,14 +57,14 @@ sitkit-0.1.0-cp311-cp311-linux_x86_64.whl
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install "torch==2.11.0+cu128" \
-  --index-url https://download.pytorch.org/whl/cu128
-python -m pip install ./sitkit-0.1.0-*.whl
+python -m pip install -r requirements.txt
+python -m pip install --no-deps ./sitkit-0.1.0-*.whl
 sitkit --version
 ```
 
-PyTorch for CUDA 12.8 is installed explicitly to avoid selecting a CUDA 13.0 build
-that may not work with the server's NVIDIA driver.
+`requirements.txt` pins `torch==2.11.0+cu128` and configures the official PyTorch
+CUDA 12.8 wheel index. `--no-deps` prevents wheel installation from resolving a
+different PyTorch build after the required dependencies are installed.
 
 Successful installation prints:
 

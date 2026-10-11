@@ -1,8 +1,10 @@
+# Official PyTorch CUDA 12.8 wheel index.
 --extra-index-url https://download.pytorch.org/whl/cu128
 
 cryptography>=42
 matplotlib>=3.7
 numpy>=1.24
+# Keep this exact build so pip cannot replace it with a CUDA 13 build.
 torch==2.11.0+cu128
 tqdm>=4.66
 transformers>=4.40,<5
