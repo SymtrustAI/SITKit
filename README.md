@@ -51,9 +51,14 @@ sitkit-0.1.0-cp311-cp311-linux_x86_64.whl
 
 ```bash
 python -m pip install --upgrade pip
+python -m pip install "torch==2.11.0+cu128" \
+  --index-url https://download.pytorch.org/whl/cu128
 python -m pip install ./sitkit-0.1.0-*.whl
 sitkit --version
 ```
+
+这里先安装 CUDA 12.8 版本的 PyTorch，避免 `pip` 自动选择服务器驱动无法运行的
+CUDA 13.0 版本。
 
 成功后应显示：
 
@@ -212,6 +217,8 @@ conda activate sitkit
 
 ```bash
 python -m pip install --upgrade pip
+python -m pip install "torch==2.11.0+cu128" \
+  --index-url https://download.pytorch.org/whl/cu128
 python -m pip install ./sitkit-0.1.0-*.whl
 sitkit --version
 ```
