@@ -102,6 +102,14 @@ sitkit \
 "sample_count": 20
 ```
 
+如果希望一次完成数据检查和分析，也可以直接运行简化版 CLI 示例：
+
+```bash
+bash examples/cli/quickstart.sh
+```
+
+脚本顶部只有模型、数据和输出三个路径可配置。
+
 ## 第六步：运行分析
 
 ```bash

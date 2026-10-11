@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -e
 
-: "${MODEL:?Set MODEL to a local Qwen3-8B or Llama3-8B directory}"
+# 在 SITKit 目录下运行：
+# bash examples/cli/quickstart.sh
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-RUN_DIR="${RUN_DIR:-${SCRIPT_DIR}/../../runs/cli-quickstart}"
-INPUT_JSON="${INPUT_JSON:-${SCRIPT_DIR}/../datasets/economics.json}"
+# 只需按实际情况修改下面三个路径。
+MODEL_PATH="./models/Qwen3-8B"
+INPUT_FILE="examples/datasets/economics.json"
+OUTPUT_DIR="runs/economics"
 
-mkdir -p "${RUN_DIR}"
+# 第一步：检查输入数据，不加载模型。
+echo "Checking input data..."
+sitkit \
+  --input-json "$INPUT_FILE" \
+  --check-only
 
-ARGS=(
-  --model "${MODEL}"
-  --input-json "${INPUT_JSON}"
-  --reward-type gt
-  --max-players 10
-  --top-k 5
-  --output-dir "${RUN_DIR}/interaction"
-)
+# 第二步：运行单模型交互分析。
+echo "Running SITKit..."
+sitkit \
+  --model "$MODEL_PATH" \
+  --input-json "$INPUT_FILE" \
+  --output-dir "$OUTPUT_DIR"
 
-if [[ -n "${REFERENCE_MODEL:-}" ]]; then
-  ARGS+=(--reference-model "${REFERENCE_MODEL}")
-fi
-
-sitkit "${ARGS[@]}"
-
-printf 'SITKit quickstart outputs: %s\n' "${RUN_DIR}"
+echo "Done. Results are saved in: $OUTPUT_DIR"
