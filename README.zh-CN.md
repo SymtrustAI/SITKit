@@ -14,6 +14,8 @@
 
 <p><code>v0.1.0</code> · <code>Python 3.11</code> · <code>Linux x86_64</code></p>
 
+<p><a href="LICENSE.md">PolyForm Noncommercial 1.0.0</a></p>
+
 <p><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
 </div>
@@ -274,3 +276,10 @@ nvidia-smi
 ```
 
 查看当前显存占用。
+
+## 许可证
+
+SITKit 采用 [PolyForm Noncommercial License 1.0.0](LICENSE.md)。允许非商业的
+学术、教育及个人研究用途；商业使用需要另行取得版权所有者的书面授权。
+
+这是一个 source-available 的非商业发行版本，不属于 OSI 认证的开源软件。

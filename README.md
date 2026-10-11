@@ -14,6 +14,8 @@
 
 <p><code>v0.1.0</code> · <code>Python 3.11</code> · <code>Linux x86_64</code></p>
 
+<p><a href="LICENSE.md">PolyForm Noncommercial 1.0.0</a></p>
+
 <p><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
 </div>
@@ -277,3 +279,13 @@ usage with:
 ```bash
 nvidia-smi
 ```
+
+## License
+
+SITKit is available under the
+[PolyForm Noncommercial License 1.0.0](LICENSE.md). Noncommercial academic,
+educational, and personal research use is permitted. Commercial use requires a
+separate written license from the copyright holder.
+
+This is a source-available, noncommercial release. It is not OSI-approved open
+source software.
