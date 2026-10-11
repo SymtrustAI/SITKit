@@ -85,6 +85,58 @@ PY
 请不要修改、转换或重新保存下载后的模型文件。SITKit 会校验模型内容，并自动匹配
 随 wheel 提供的 baseline。
 
+<details>
+<summary><strong>如何构造自己的样本 / How to prepare samples</strong></summary>
+
+### 输入文本（`text`）
+
+- 建议包含 **10–20 个英文单词**。
+- 不要出现重复或冗余的词组（No repetition）。
+- 文本应当语义完整、自然且有明确含义（Semantically meaningful）。
+
+### 交互元（`players`）
+
+- 方法上建议标注 **8–15 个交互元**。当前公开版为控制计算量，最多支持 12 个，
+  因此实际请使用 **8–12 个**。
+- 每个交互元可以是一个词或连续短语，不需要覆盖文本中的所有词。
+- 必须按照它们在原文中出现的顺序填写（Preserve original order）。
+- 不要把纯标点作为交互元（Avoid punctuation-only tokens）。
+- 尽量不要选择 `and`、`to`、`the` 等语义较弱的词
+  （Avoid weak semantic words）。
+- 交互元之间不能重叠，并且都必须能在输入文本中找到。
+
+### 解释目标（`target_text`，可选）
+
+- 如果提供，建议选择有明确语义的实词，例如名词、动词或形容词。
+- 如果模型对该词的预测置信度很低，交互结果的稳定性和可解释性也会受到影响。
+- 如果省略，SITKit 会自动解释目标模型预测概率最高的下一个 Token。
+
+一个最小数据集是由样本对象组成的 JSON 数组：
+
+```json
+[
+  {
+    "text": "Rising energy costs reduced factory output and weakened regional manufacturing",
+    "players": [
+      {"text": "Rising"},
+      {"text": "energy"},
+      {"text": "costs"},
+      {"text": "reduced"},
+      {"text": "factory output"},
+      {"text": "weakened"},
+      {"text": "regional"},
+      {"text": "manufacturing"}
+    ],
+    "target_text": "growth"
+  }
+]
+```
+
+保存后先运行 `sitkit --input-json your-dataset.json --check-only`，检查交互元的
+顺序、位置和重叠情况，再开始正式分析。
+
+</details>
+
 ## 第五步：检查示例数据
 
 第一次运行建议先检查 JSON，不加载模型：
