@@ -62,10 +62,6 @@ python -m pip install --no-deps ./sitkit-0.1.0-*.whl
 sitkit --version
 ```
 
-`requirements.txt` pins `torch==2.11.0+cu128` and configures the official PyTorch
-CUDA 12.8 wheel index. `--no-deps` prevents wheel installation from resolving a
-different PyTorch build after the required dependencies are installed.
-
 Successful installation prints:
 
 ```text

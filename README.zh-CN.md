@@ -62,10 +62,6 @@ python -m pip install --no-deps ./sitkit-0.1.0-*.whl
 sitkit --version
 ```
 
-`requirements.txt` 已固定 `torch==2.11.0+cu128`，并配置了 PyTorch 官方的
-CUDA 12.8 wheel 下载源。依赖安装完成后使用 `--no-deps` 安装 SITKit，可避免
-`pip` 再次解析并替换为其他 CUDA 版本的 PyTorch。
-
 成功后应显示：
 
 ```text
