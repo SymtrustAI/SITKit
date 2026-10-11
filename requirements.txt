@@ -1,0 +1,7 @@
+cryptography>=42
+matplotlib>=3.7
+numpy>=1.24
+torch>=2.1
+tqdm>=4.66
+transformers>=4.40,<5
+
