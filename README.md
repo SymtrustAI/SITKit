@@ -102,7 +102,8 @@ model contents and selects the matching baseline bundled in the wheel.
 
 ### Input text (`text`)
 
-- Use **10–20 English words**.
+- The input must be English and contain **no more than 50 English words**.
+- **10–20 English words** is the recommended range.
 - Avoid repeated or redundant phrases.
 - Keep the text natural and semantically meaningful.
 
@@ -116,6 +117,11 @@ model contents and selects the matching baseline bundled in the wheel.
 - Avoid punctuation-only tokens.
 - Avoid weak semantic words such as `and`, `to`, and `the`.
 - Players must not overlap, and every player must occur in the input text.
+- Every sample in the same dataset must use the same number of players.
+
+SITKit treats these as hard preflight rules. Run
+`sitkit --input-json FILE --check-only` to check them without loading a model.
+Invalid input exits with a clear error and the analysis does not start.
 
 ### Explanation target (`target_text`, optional)
 
