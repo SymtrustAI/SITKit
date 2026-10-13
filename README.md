@@ -44,9 +44,11 @@ python --version
 
 The last command should print `Python 3.11.x`.
 
-## Step 2: Enter the downloaded directory
+## Step 2: Download SITKit
 
-Place this repository and `sitkit-0.1.0-*.whl` in the same directory, then enter it:
+Download `sitkit-0.1.0-cp311-cp311-linux_x86_64.whl` from the
+[SITKit v0.1.0 Release](https://github.com/SymtrustAI/SITKit/releases/tag/v0.1.0).
+Place the wheel in this repository directory, then enter it:
 
 ```bash
 cd SITKit
@@ -88,7 +90,6 @@ from huggingface_hub import snapshot_download
 
 snapshot_download(
     repo_id="Qwen/Qwen3-8B",
-    revision="b968826d9c46dd6066d109eabc6255188de91218",
     local_dir="models/Qwen3-8B",
 )
 PY
@@ -236,7 +237,6 @@ from huggingface_hub import snapshot_download
 
 snapshot_download(
     repo_id="meta-llama/Meta-Llama-3-8B",
-    revision="8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
     local_dir="models/Meta-Llama-3-8B",
 )
 PY
